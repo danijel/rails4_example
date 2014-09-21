@@ -1,3 +1,5 @@
+require 'rails_helper'
+
 describe User do
 
   before(:each) { @user = User.new(email: 'user@example.com') }
@@ -8,6 +10,10 @@ describe User do
 
   it "#email returns a string" do
     expect(@user.email).to match 'user@example.com'
+  end
+
+  context "associations" do
+   it { should have_many(:statuses) } 
   end
 
 end

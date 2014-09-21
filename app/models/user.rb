@@ -2,6 +2,7 @@ class User < ActiveRecord::Base
   enum role: [:user, :admin]
   mount_uploader :avatar, AvatarUploader
   after_initialize :set_default_role, :if => :new_record?
+  has_many :statuses, dependent: :destroy
 
   def set_default_role
     self.role ||= :user
