@@ -13,6 +13,12 @@ gem 'bootstrap-sass'
 gem 'devise'
 gem 'pundit'
 gem 'thin'
+
+# Image processing
+gem 'carrierwave'
+gem 'mini_magick'
+gem 'carrierwave-processing'
+
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller', :platforms=>[:mri_21]
