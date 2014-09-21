@@ -9,10 +9,6 @@ class AvatarUploader < CarrierWave::Uploader::Base
   process :quality => 90 # Set JPEG/MIFF/PNG compression level (0-100)
   process :convert => 'jpeg'
 
-  # Choose what kind of storage to use for this uploader:
-  storage :file
-  # storage :fog
-
   def store_dir
    "uploads/#{model.class.to_s.underscore}/#{model.id}/avatar"
   end
