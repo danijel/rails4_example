@@ -80,3 +80,21 @@ section {
   @extend .btn-primary;
   @extend .btn-xs;
 }
+#avatar-holder{
+  padding-bottom: 10px;
+}
+
+#avatar{
+  width: 100px;
+  height: 100px;
+  overflow: hidden;
+  position: relative;
+  border-radius: 200px;
+  border: 1px solid #e7e7e7;
+  display: inline-block;
+}
+
+#avatar img{
+  width: 100%;
+  height: 100%;
+}
