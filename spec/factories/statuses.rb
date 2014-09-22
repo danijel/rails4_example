@@ -2,6 +2,7 @@
 
 FactoryGirl.define do
   factory :status do
+    user
     status Faker::Lorem.sentence
   end
 end
