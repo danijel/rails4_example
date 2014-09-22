@@ -16,6 +16,7 @@ class StatusesController < ApplicationController
   # POST /statuses
   def create
     @status = Status.new(status_params)
+    @status.user = current_user
     respond_to do |format|
       if @status.save
         format.html { redirect_to @status, notice: 'Status was successfully created.' }
@@ -27,6 +28,7 @@ class StatusesController < ApplicationController
 
   # PATCH/PUT /statuses/1
   def update
+    authorize @status
     respond_to do |format|
       if @status.update(status_params)
         format.html { redirect_to @status, notice: 'Status was successfully updated.' }

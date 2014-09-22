@@ -41,4 +41,21 @@ feature 'Statuses crud' do
     expect(page).to have_content sentence
   end
 
+  scenario 'from show page to edit page' do
+    login_as(user, scope: :user)
+    status = FactoryGirl.create(:status, user: user)
+    visit edit_status_path(status)
+    expect(page).to have_content 'Editing status'
+  end
+
+  scenario 'edit status' do
+    login_as(user, scope: :user)
+    status = FactoryGirl.create(:status, user: user)
+    visit edit_status_path(status)
+    sentence = "Test " << Faker::Lorem.sentence
+    fill_in('Status', with: sentence)
+    click_button 'Save'
+    expect(page).to have_content sentence
+  end
+
 end

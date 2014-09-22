@@ -2,7 +2,8 @@
   <td>
     <div id="avatar">
       <img src="<%= status.user.avatar_url(:thumb) %>" alt="avatar" />
-    </div>
+    </div><br/>
+    <span><%= status.user.fullname %></span>
   </td>
   <td><%= status.status %></td>
   <td><%= link_to 'Show', status %></td>
