@@ -29,4 +29,16 @@ feature 'Statuses crud' do
     expect(page).to have_content 'New status'
   end
 
+  scenario 'creation of status leads to show page' do
+    login_as(user, scope: :user)
+    sentence = Faker::Lorem.sentence
+    visit new_status_path
+    page.has_field?('textarea')
+    page.has_button?('Save')
+    fill_in('Status', with: sentence)
+    click_button 'Save'
+    page.has_link?('Edit')
+    expect(page).to have_content sentence
+  end
+
 end

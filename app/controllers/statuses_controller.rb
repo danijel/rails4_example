@@ -1,6 +1,6 @@
 class StatusesController < ApplicationController
   before_action :authenticate_user!
-  after_action :verify_authorized, except: [:index, :new, :show]
+  after_action :verify_authorized, only: [:update, :destroy]
   before_action :set_status, only: [:show, :edit, :update, :destroy]
 
   # GET /statuses
@@ -16,7 +16,6 @@ class StatusesController < ApplicationController
   # POST /statuses
   def create
     @status = Status.new(status_params)
-
     respond_to do |format|
       if @status.save
         format.html { redirect_to @status, notice: 'Status was successfully created.' }
