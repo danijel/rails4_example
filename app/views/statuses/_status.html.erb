@@ -7,6 +7,14 @@
   </td>
   <td><%= status.status %></td>
   <td><%= link_to 'Show', status %></td>
-  <td><%= link_to 'Edit', edit_status_path(status) %></td>
-  <td><%= link_to 'Destroy', status, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  <td>
+    <% if policy(status).update? %>
+      <%= link_to 'Edit', edit_status_path(status) %>
+    <% end %>
+  </td>
+  <td>
+    <% if policy(status).destroy? %>
+      <%= link_to 'Destroy', status, method: :delete, data: { confirm: 'Are you sure?' } %>
+    <% end %>
+  </td>
 </tr>
