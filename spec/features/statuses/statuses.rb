@@ -22,4 +22,11 @@ feature 'Statuses crud' do
     expect(page).to have_content s2.status
   end
 
+  scenario 'from status index to new status page' do
+    login_as(user, scope: :user)
+    visit statuses_path
+    click_link('New Status')
+    expect(page).to have_content 'New status'
+  end
+
 end
