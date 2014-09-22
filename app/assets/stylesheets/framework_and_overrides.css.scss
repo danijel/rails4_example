@@ -100,3 +100,16 @@ section {
 }
 
 td.status { white-space:pre }
+
+#fileupload{
+  display: none;
+}
+
+#progress{
+  margin-top: 5px; 
+}
+
+.bar {
+  height: 18px;
+  background: green;
+}

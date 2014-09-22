@@ -29,10 +29,23 @@ class UsersController < ApplicationController
     redirect_to users_path, :notice => "User deleted."
   end
 
+  def upload_avatar
+    @user = User.find(params[:id])
+    authorize @user
+    @user.avatar = params[:avatar]
+    respond_to do |format|
+      if @user.save
+        format.json { render json: {file: @user.to_jq_upload}, status: :created }
+      else
+        format.json { render json: @user.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
   private
 
   def secure_params
-    params.require(:user).permit(:role, :first_name, :last_name)
+    params.require(:user).permit(:role, :first_name, :last_name, :avatar)
   end
 
 end
