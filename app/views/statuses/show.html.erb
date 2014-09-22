@@ -1,4 +1,4 @@
-<p><%= @status.status %></p>
+<p><%= simple_format(@status.status) %></p>
 <% if policy(@status).update? %>
   <%= link_to 'Edit', edit_status_path(@status) %> |
 <% end %>

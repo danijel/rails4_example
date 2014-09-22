@@ -5,7 +5,7 @@
     </div><br/>
     <span><%= status.user.fullname %></span>
   </td>
-  <td><%= status.status %></td>
+  <td class="status"><%= status.status %></td>
   <td><%= link_to 'Show', status %></td>
   <td>
     <% if policy(status).update? %>
