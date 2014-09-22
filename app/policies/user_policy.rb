@@ -23,4 +23,8 @@ class UserPolicy
     @current_user.admin?
   end
 
+  def upload_avatar?
+    @current_user == @user
+  end
+
 end
