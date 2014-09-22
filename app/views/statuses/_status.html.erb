@@ -1,0 +1,11 @@
+<tr>
+  <td>
+    <div id="avatar">
+      <img src="<%= status.user.avatar_url(:thumb) %>" alt="avatar" />
+    </div>
+  </td>
+  <td><%= status.status %></td>
+  <td><%= link_to 'Show', status %></td>
+  <td><%= link_to 'Edit', edit_status_path(status) %></td>
+  <td><%= link_to 'Destroy', status, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+</tr>

@@ -1,0 +1,19 @@
+<h1>Listing statuses</h1>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Status</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <%= render partial: "status", collection: @statuses %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Status', new_status_path %>
