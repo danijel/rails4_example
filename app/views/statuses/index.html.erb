@@ -13,7 +13,7 @@
     <%= render partial: "status", collection: @statuses %>
   </tbody>
 </table>
-
+<%= will_paginate @statuses %>
 <br>
 
 <%= link_to 'New Status', new_status_path %>

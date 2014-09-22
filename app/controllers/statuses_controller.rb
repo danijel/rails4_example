@@ -5,7 +5,7 @@ class StatusesController < ApplicationController
 
   # GET /statuses
   def index
-    @statuses = Status.all
+    @statuses = Status.paginate(:page => params[:page])
   end
 
   # GET /statuses/new

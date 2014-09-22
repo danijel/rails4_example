@@ -19,6 +19,8 @@ gem 'carrierwave'
 gem 'mini_magick'
 gem 'carrierwave-processing'
 
+gem 'will_paginate', '~> 3.0'
+
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller', :platforms=>[:mri_21]
